@@ -1,12 +1,10 @@
 #Largest Prime Factor
 
 Dividend = 600851475143
-Divisor = 2
-Factors = []
 
-while(Divisor < Dividend):
+for Divisor in range(2, Dividend):
     if(Dividend % Divisor == 0):
-        Factors.append(Divisor)
-    Divisor = Divisor + 1
+        Dividend = Dividend // Divisor
+        LargestPrimeFactor = Divisor
 
-print(Factors)
+print(LargestPrimeFactor)

@@ -6,18 +6,17 @@ public class Problem03
 {
     public static void Main(string[] args)
     {
-        long Divisor = 1, Quotient = 0;
-        const long Dividend = 600851475143;
+        int Dividend = 600851475143, Dividend, LargestPrimeFactor;
 
-        while(Divisor <= Dividend)
+        for(int Divisor = 2, Dividend = 600851475143; Divident != 1; Divisor = Divisor = Divisor + 1)
         {
             if(Dividend % Divisor == 0)
             {
-                Quotient = Dividend % Divisor;
+                Dividend = Dividend / Divisor;
+                LargestPrimeFactor = Divisor;
             }
-            Divisor = Divisor + 1;
         }
 
-        Console.WriteLine("Largest prime factor : {0}", Quotient);
+        Console.WriteLine(LargestPrimeFactor);
     }
 }
