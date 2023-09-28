@@ -6,9 +6,10 @@ public class Problem03
 {
     public static void Main(string[] args)
     {
-        int Dividend = 600851475143, Dividend, LargestPrimeFactor;
+        long Dividend = 600851475143;
+        int LargestPrimeFactor = 0;
 
-        for(int Divisor = 2, Dividend = 600851475143; Divident != 1; Divisor = Divisor = Divisor + 1)
+        for(int Divisor = 2; Dividend != 1; Divisor++)
         {
             if(Dividend % Divisor == 0)
             {
