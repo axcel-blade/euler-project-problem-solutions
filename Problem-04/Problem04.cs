@@ -6,47 +6,32 @@ public class Problem04
 {
     public static void Main(string[] args)
     {
-        long MultipliedNumber = 0, LargestPalindromeNumber = 0, ReversedNumber = 0;
-        string ReversedNumberString = "";
+        int MultipliedNumber = 0, ReversedNumber = 0, Remainder = 0, Number = 0, LargestPalindromeProduct = 0;
 
-        for(int i = 100; i < 1000; i++)
+        for(int i = 91; i < 99; i = i + 1)
         {
-            for(int j = 100; j < 1000; j++)
+            for(int j = 91; j < 99; j = j + 1)
             {
                 MultipliedNumber = i * j;
-                string MultipliedNumberString = MultipliedNumber.ToString();
-                //Console.WriteLine(MultipliedNumberString);
-                //Console.WriteLine(MultipliedNumberString.Length);
+                Number = MultipliedNumber;
 
-                //Reverse the multiplied numbers
-                for(int k = MultipliedNumberString.Length; k > 1; k--)
+                while(Number != 0)
                 {
-                    //Get the quotient of the multiplied numbers
-                    //double Quotient = Math.Floor(MultipliedNumber / Math.Pow(10, k-1));
-
-                    //Get the remainder of the multiplied numbers
-                    //double Remainder = MultipliedNumber % Math.Pow(10, k-1);
-
-                    //Console.WriteLine(Quotient);
-                    //Console.WriteLine(Remainder);
-
-                    //ReversedNumber = ReversedNumber + (Quotient * Math.Pow(10, k-1));
-
-                    //MultipliedNumber = Remainder;
-
-                    ReversedNumberString = ReversedNumberString + MultipliedNumberString[k-1];
-                    Console.WriteLine(ReversedNumberString);
+                    Remainder = Number % 10;
+                    ReversedNumber = ReversedNumber * 10 + Remainder;
+                    Number = Number / 10;
                 }
 
-                ReversedNumber = Int64.Parse(ReversedNumberString);
-
-                if(ReversedNumber == MultipliedNumber)
+                if(MultipliedNumber == ReversedNumber)
                 {
-                    LargestPalindromeNumber = MultipliedNumber;
+                    LargestPalindromeProduct = MultipliedNumber;
+                    //Console.WriteLine(ReversedNumber);
+                    Console.WriteLine(LargestPalindromeProduct);
                 }
             }
         }
 
-        Console.WriteLine(LargestPalindromeNumber);
+        //Console.WriteLine(LargestPalindromeProduct);
+        //Console.WriteLine(ReversedNumber);
     }
 }
