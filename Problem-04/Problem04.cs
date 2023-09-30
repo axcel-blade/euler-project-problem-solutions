@@ -6,39 +6,42 @@ public class Problem04
 {
     public static void Main(string[] args)
     {
-        int MultipliedNumber = 0, ReversedNumber = 0, Number = 0, Remainder = 0, NumberOne = 10, NumberTwo = 10;
+        int ReversedNumber = 0;
 
-        while(NumberOne < 91)
+        for(int NumberOne = 10; NumberOne < 20; NumberOne++)
         {
-            while(NumberTwo < 99)
+            for(int NumberTwo = 10; NumberTwo < 20; NumberTwo++)
             {
-                MultipliedNumber = NumberOne * NumberTwo;
-                Number = MultipliedNumber;
+                int MultipliedNumber = NumberOne * NumberTwo;
+                int Dividend = MultipliedNumber;
                 //Console.WriteLine(Number);
+                //Console.WriteLine("{0} x {1} = {2}", NumberOne, NumberTwo, Dividend);
 
-                while(Number != 0)
+                while(Dividend != 0)
                 {
-                    Remainder = Number % 10;
+                    int Remainder = Dividend % 10;
                     //Console.WriteLine(Remainder);
 
                     ReversedNumber = ReversedNumber * 10 + Remainder;
                     //Console.WriteLine(ReversedNumber);
 
-                    Number = Number / 10;
-                    //Console.WriteLine(Number);
+                    Dividend = Dividend / 10;
+                    Console.WriteLine(Dividend);
                 }
+
+                //Console.WriteLine(ReversedNumber);
 
                 if(MultipliedNumber == ReversedNumber)
                 {
                     Console.WriteLine(MultipliedNumber);
                 }
 
-                NumberTwo = NumberTwo + 1;
+                //NumberTwo++;
             }
 
-            NumberOne = NumberOne + 1;
+            //NumberOne++;
         }
 
-        Console.WriteLine(ReversedNumber);
+        //Console.WriteLine(ReversedNumber);
     }
 }
