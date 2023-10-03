@@ -12,6 +12,7 @@ public class Problem07
         {
             int Count = 0;
 
+            //Finding the prime number
             for(int i = 1; i <= Number; i++)
             {
                 if(Number % i == 0)
